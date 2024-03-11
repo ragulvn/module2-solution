@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            box-sizing: border-box;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .section-title {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #3498db; /* Unique color for each section title region */
+            padding: 5px 10px;
+            border: 1px solid black;
+            color: #fff; /* Text color for better readability */
+        }
+
+        /* Desktop view */
+        @media (min-width: 992px) {
+            section {
+                width: 30%; /* Equal width for each section */
+                float: left;
+            }
+        }
+
+        /* Tablet view */
+        @media (min-width: 768px) and (max-width: 991px) {
+            section {
+                width: 48%; /* Equal width for the first two sections */
+                float: left;
+            }
+            section:nth-child(3) {
+                width: 100%; /* Full width for the third section in the second row */
+                clear: both;
+            }
+        }
+
+        /* Mobile view */
+        @media (max-width: 767px) {
+            section {
+                width: 100%; /* Full width for each section */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="section-title">Chicken</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section>
+        <div class="section-title">Beef</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section>
+        <div class="section-title">Sushi</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+</body>
+</html>
 
